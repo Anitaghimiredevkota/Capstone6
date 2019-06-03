@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "TaskList";
+}
+
+<h2>TaskList</h2>
+
+<a href="../UserTask/TaskForm">Add a task!</a>
+<table>
+    <tr>
+        <th>Description</th>
+        <th>Due_Date</th>
+        <th>Complete</th>
+    </tr>
+    @foreach (var task in @ViewBag.taskList)
+    {
+        <tr>
+            <td id="description">@task.Description</td>
+            <td id="dueDate">@task.Due_Date</td>
+            <td id="complete">@task.Complete</td>
+            <td>
+                <a href="../UserTask/UpdateTask?TaskID=@task.Id" class="btn-primary">Update</a>
+                <a href="../UserTask/DeleteTask?TaskID=@task.Id" class="btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

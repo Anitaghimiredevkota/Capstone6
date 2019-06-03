@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<a href="../UserTask/CreateUser">Create Account!</a>
+@if (Session["CurrentUser"] != null)
+{
+    <a href="../UserTask/Logout" class="btn-danger">Logout</a>
+
+}
+else
+{
+    <a href="../UserTask/Login">Login!</a>
+}
